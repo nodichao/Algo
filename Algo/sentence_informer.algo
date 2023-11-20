@@ -1,0 +1,30 @@
+ALGORITHM sentence_informer
+VAR
+    nb_characters,nb_words,nb_vowels : INTEGER :=0;
+    i : INTEGER;
+    sentence : STRING;
+BEGIN
+    //let's count the number of characters as the length of the sentence
+    Read(sentence);
+    FOR i FROM 1 TO length(sentence) STEP 1  DO
+        nb_characters := nb_characters + 1;
+    END_FOR
+
+    //let's now count the number of words
+    FOR i FROM 1 TO length(sentence) STEP 1  DO
+        IF ((sentence[i] = " " OR sentence[i] = "." ) ) THEN
+            nb_words = nb_words + 1 ;
+        END_IF
+    END_FOR
+
+    //let's now count the number of vowels
+    FOR i FROM 1 TO length(sentence) STEP 1 DO
+        IF (sentence[i] = "a" OR sentence[i] = "e" OR sentence[i] = "i" OR sentence[i] = "o" OR sentence[i] = "u" OR sentence[i] = "y") THEN
+            nb_vowels = nb_vowels + 1;
+        END_IF
+    END_FOR
+
+    Write(nb_characters);
+    Write(nb_words)
+    Write(nb_vowels);
+END
